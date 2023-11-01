@@ -1,0 +1,50 @@
+{% extends "index.html" %} {% block content %}
+<div class="site-section">
+  <div class="container">
+    <div class="row">
+        <div class="card col-1 col-md-12" >
+          <div class="card-body">
+            <blockquote class="blockquote mb-0">
+              <p>Select the project to drop:</p>
+              <form action="" class="p-5 " style="background-color:white; border-radius:30px; opacity:88%;" method="POST">
+              <div class="form-group">
+                <label for="IdSelect">Project id</label>
+                <input type="text" class="form-control" name="IdSelect" id="IdSelect" aria-describedby="helpId" placeholder="Select id">
+                <label for="IdSelect">Assign State</label>
+                <input type="text" class="form-control" name="State" id="State" aria-describedby="helpId" placeholder="State to assign">
+                <small id="helpId" class="form-text text-muted">The Selected project will be marked </small>
+                <input
+                    type="submit"
+                    value="DROP"
+                    class="btn btn-primary py-2 px-4 text-white"
+                  />
+              </div>
+            </form>
+              </div>
+            </blockquote>
+          </div>
+        </div>
+        <br>
+      <h1>List of projects:</h1>
+      <hr />
+      <div class="table" id="table" style="height: 500px;
+      overflow-y: auto;" alt="not loaded"></div>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      // Select the div element
+      const tableDiv = $("#table");
+      console.log("working");
+      // Load the HTML file into the div element
+      tableDiv.load("./table.html");
+      console.log($("#table").text());
+      const table = $("#CTable");
+
+
+    });
+  </script>
+</div>
+{% endblock %}
